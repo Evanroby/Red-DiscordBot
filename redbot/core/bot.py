@@ -975,7 +975,7 @@ class Red(
         """
         await self._prefix_cache.set_prefixes(guild=guild, prefixes=prefixes)
 
-    async def get_embed_color(self, location: discord.abc.Messageable) -> discord.Color:
+    async def get_embed_color(self, location: discord.abc.Messageable) -> discord.Color | None:
         """
         Get the embed color for a location. This takes into account all related settings.
 
@@ -1134,7 +1134,8 @@ class Red(
 
         await self._maybe_update_config()
         self.description = await self._config.description()
-        self._color = discord.Colour(await self._config.color())
+        color_value = await self._config.color()
+        self._color = discord.Colour(color_value) if color_value is not None else None
 
         init_global_checks(self)
         init_events(self, self._cli_flags)
