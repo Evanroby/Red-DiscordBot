@@ -4070,7 +4070,7 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
 
     @_set.command(name="colour", aliases=["color"])
     @commands.is_owner()
-    async def _set_colour(self, ctx: commands.Context, *, colour: discord.Colour = None):
+    async def _set_colour(self, ctx: commands.Context, *, colour: str = None):
         """
         Sets a default colour to be used for the bot's embeds.
 
@@ -4084,16 +4084,30 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
         - `[p]set colour 0x5DADE2`
         - `[p]set color 0x#FDFEFE`
         - `[p]set color #7F8C8D`
+        - `[p]set colour theme`
 
         **Arguments:**
-        - `[colour]` - The colour to use for embeds. Leave blank to set to the default value (red).
+        - `[colour]` - The colour to use for embeds. Use `theme` to apply Discord's theme-based color. Leave blank to set to the default value (red).
         """
         if colour is None:
             ctx.bot._color = discord.Color.red()
             await ctx.bot._config.color.set(discord.Color.red().value)
             return await ctx.send(_("The color has been reset."))
-        ctx.bot._color = colour
-        await ctx.bot._config.color.set(colour.value)
+        if colour.lower() == "theme":
+            ctx.bot._color = None
+            await ctx.bot._config.color.set(None)
+            return await ctx.send(_("The color has been set to use theme-based colors."))
+        try:
+            converted_colour = await commands.ColourConverter().convert(ctx, colour)
+        except commands.BadArgument:
+            await ctx.send(
+                _(
+                    "Invalid color. Please provide a valid color name, hex code, or use 'theme' for theme-based colors."
+                )
+            )
+            return
+        ctx.bot._color = converted_colour
+        await ctx.bot._config.color.set(converted_colour.value)
         await ctx.send(_("The color has been set."))
 
     @_set.command(
