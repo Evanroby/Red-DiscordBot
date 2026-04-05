@@ -120,7 +120,7 @@ rst_prolog += f"\n.. |cool| replace:: \N{HEAVY BLACK HEART}\N{VARIATION SELECTOR
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "furo"
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -132,7 +132,11 @@ html_extra_path = ["_html"]
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    "source_repository": "https://github.com/Cog-Creators/Red-DiscordBot/",
+    "source_branch": "V3/develop",
+    "source_directory": "docs/",
+}
 
 html_context = {
     # Enable the "Edit in GitHub link within the header of each page.
@@ -155,15 +159,6 @@ html_context = {
 #
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    "**": [
-        "about.html",
-        "navigation.html",
-        "relations.html",  # needs 'show_related': True theme option to display
-        "searchbox.html",
-        "donate.html",
-    ]
-}
 
 
 # -- Options for HTMLHelp output ------------------------------------------

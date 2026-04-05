@@ -7,6 +7,7 @@ Future changes (currently deprecated functionality)
 .. include:: _includes/preamble.rst
 
 .. contents::
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
     :depth: 4
     :local:
 

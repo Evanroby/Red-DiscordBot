@@ -21,6 +21,7 @@ Here are some things to consider to help make your upgrade as smooth as possible
 Updating differs depending on the version you currently have. Next sections will explain how to upgrade to latest version of Red (|version|) from the version that is in the header of the section.
 
 .. contents:: Choose the version you're currently on from the list below:
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
     :local:
     :depth: 1
 

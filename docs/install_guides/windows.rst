@@ -13,6 +13,7 @@ Installing the pre-requirements
 Please install the pre-requirements by following instructions from one of the following subsections.
 
 .. contents:: Choose a method of installing pre-requirements:
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
     :local:
 
 ----
