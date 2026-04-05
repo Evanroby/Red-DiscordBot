@@ -59,7 +59,7 @@ asyncio_mode = 'auto'
 [project.optional-dependencies]
 doc = [
     "sphinx>=7.2,<8",
-    "sphinx-book-theme",
+    "pydata-sphinx-theme",
     "sphinxcontrib-trio",
     "sphinx-prompt",
 ]
