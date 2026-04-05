@@ -120,7 +120,7 @@ rst_prolog += f"\n.. |cool| replace:: \N{HEAVY BLACK HEART}\N{VARIATION SELECTOR
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -134,6 +134,10 @@ html_extra_path = ["_html"]
 #
 html_theme_options = {
     "use_edit_page_button": True,
+    "navbar_align": "left",
+    "primary_sidebar_end": ["indices.html"],
+    "navigation_depth": 2,
+    "show_nav_level": 2,
 }
 
 html_context = {
