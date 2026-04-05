@@ -24,7 +24,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Topic :: Communications :: Chat",
 ]
-dynamic = ["version", "requires-python", "dependencies", "optional-dependencies"]
+dynamic = ["version", "requires-python", "dependencies"]
 
 [project.urls]
 "Homepage" = "https://github.com/Cog-Creators/Red-DiscordBot"
@@ -55,3 +55,11 @@ force-exclude = '''
 
 [tool.pytest.ini_options]
 asyncio_mode = 'auto'
+
+[project.optional-dependencies]
+doc = [
+    "sphinx>=7.1,<8",
+    "furo",
+    "sphinxcontrib-trio",
+    "sphinx-prompt",
+]
