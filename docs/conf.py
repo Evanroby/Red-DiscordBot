@@ -149,6 +149,9 @@ html_context = {
     "READTHEDOCS": os.environ.get("READTHEDOCS", "") == "True",
 }
 
+html_logo = ".resources/cog-creators-logo.png"
+html_title = "Red-DiscordBot"
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
