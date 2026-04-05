@@ -120,7 +120,7 @@ rst_prolog += f"\n.. |cool| replace:: \N{HEAVY BLACK HEART}\N{VARIATION SELECTOR
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -132,7 +132,9 @@ html_extra_path = ["_html"]
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    "use_edit_page_button": True,
+}
 
 html_context = {
     # Enable the "Edit in GitHub link within the header of each page.
@@ -140,6 +142,7 @@ html_context = {
     "github_user": "Cog-Creators",
     "github_repo": "Red-DiscordBot",
     "github_version": "V3/develop",
+    "doc_path": "docs",
     "version_slug": os.environ.get("READTHEDOCS_VERSION", ""),
     "rtd_language": os.environ.get("READTHEDOCS_LANGUAGE", ""),
     "READTHEDOCS": os.environ.get("READTHEDOCS", "") == "True",
