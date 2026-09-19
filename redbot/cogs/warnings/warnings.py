@@ -18,7 +18,7 @@ from redbot.core.bot import Red
 from redbot.core.commands import UserInputOptional, RawUserIdConverter
 from redbot.core.i18n import Translator, cog_i18n
 from redbot.core.utils import AsyncIter
-from redbot.core.utils.chat_formatting import box, pagify, warning
+from redbot.core.utils.chat_formatting import bold, box, pagify, warning
 from redbot.core.utils.views import ConfirmView
 from redbot.core.utils.menus import menu
 
