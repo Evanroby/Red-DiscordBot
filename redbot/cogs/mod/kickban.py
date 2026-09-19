@@ -17,6 +17,7 @@ from redbot.core.utils.chat_formatting import (
     pagify,
 )
 from redbot.core.utils.mod import get_audit_reason
+from redbot.core.utils.views import ConfirmView
 
 from .abc import MixinMeta
 from .utils import is_allowed_by_hierarchy
